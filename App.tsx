@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import EbooksPage from './components/EbooksPage';
+import AmazonFindsPage from './components/AmazonFindsPage';
+import FlipkartFindsPage from './components/FlipkartFindsPage';
 import Footer from './components/Footer';
 
 function App() {
@@ -18,14 +20,8 @@ function App() {
       <main>
         {currentPage === '/' && <HomePage onNavigate={handleNavigate} />}
         {currentPage === '/ebooks' && <EbooksPage />}
-        {/* Fallback for other routes placeholders */}
-        {(currentPage !== '/' && currentPage !== '/ebooks') && (
-            <div className="flex flex-col items-center justify-center min-h-[60vh] text-center px-4">
-                <h2 className="text-4xl font-bold text-white font-serif mb-4">Coming Soon</h2>
-                <p className="text-slate-400 max-w-md">We are currently curating the best finds for this category. Stay tuned!</p>
-                <button onClick={() => handleNavigate('/')} className="mt-8 text-amber-500 underline hover:text-amber-400">Return Home</button>
-            </div>
-        )}
+        {currentPage === '/amazon-finds' && <AmazonFindsPage />}
+        {currentPage === '/flipkart-finds' && <FlipkartFindsPage />}
       </main>
       <Footer onNavigate={handleNavigate} />
     </div>

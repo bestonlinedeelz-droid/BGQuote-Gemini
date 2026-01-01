@@ -1,6 +1,5 @@
 import React from 'react';
-import { Check, BookOpen, Star, Sparkles, ShoppingBag } from 'lucide-react';
-import HowItWorks from './HowItWorks';
+import { Check, BookOpen, Sparkles, ShoppingBag, ArrowRight, CheckCircle2 } from 'lucide-react';
 import Testimonials from './Testimonials';
 
 const EbooksPage: React.FC = () => {
@@ -15,8 +14,9 @@ const EbooksPage: React.FC = () => {
         "Bhagavad Gita Sanskrit Verse",
         "Section recaps for reflection"
       ],
-      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=800&auto=format&fit=crop", // Placeholder
-      popular: false
+      image: "/images/ebook-1.jpg", 
+      popular: false,
+      link: "https://rzp.io/rzp/letsaskkrishna"
     },
     {
       title: "Bhagavad Gita for Today's world",
@@ -28,8 +28,9 @@ const EbooksPage: React.FC = () => {
         "Powerful quotes included",
         "Real-life applications"
       ],
-      image: "https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=800&auto=format&fit=crop", // Placeholder
-      popular: true
+      image: "/images/ebook-2.jpg",
+      popular: true,
+      link: "https://rzp.io/rzp/BGQuote1"
     },
     {
       title: "Bhagavad Gita for kids",
@@ -41,8 +42,9 @@ const EbooksPage: React.FC = () => {
         "Visually rich illustrations",
         "Ideal for bedtime moral lessons"
       ],
-      image: "https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=800&auto=format&fit=crop", // Placeholder
-      popular: false
+      image: "/images/ebook-3.jpg",
+      popular: false,
+      link: "https://rzp.io/rzp/BGforkids"
     }
   ];
 
@@ -62,7 +64,7 @@ const EbooksPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Books Grid */}
+      {/* Books Grid - Quick View */}
       <section className="py-20 bg-slate-950">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -78,9 +80,17 @@ const EbooksPage: React.FC = () => {
                 )}
                 
                 {/* Image Area */}
-                <div className="h-48 overflow-hidden relative">
-                    <img src={book.image} alt={book.title} className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                <div className="h-80 overflow-hidden relative bg-slate-800 group">
+                    <img 
+                      src={book.image} 
+                      alt={book.title} 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      onError={(e) => {
+                        console.error(`Failed to load ebook image: ${book.image}`);
+                        e.currentTarget.src = "https://placehold.co/600x900/1e293b/fbbf24?text=Book+Cover";
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent opacity-60"></div>
                 </div>
 
                 <div className="p-8 flex-grow flex flex-col">
@@ -101,13 +111,144 @@ const EbooksPage: React.FC = () => {
                         <span className="text-3xl font-bold text-white">{book.price}</span>
                         <span className="text-slate-500 text-sm mb-1 line-through">₹299</span>
                     </div>
-                    <button className={`w-full py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${book.popular ? 'bg-amber-500 text-slate-900 hover:bg-amber-400' : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 hover:border-amber-500/50'}`}>
+                    <a 
+                      href={book.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${book.popular ? 'bg-amber-500 text-slate-900 hover:bg-amber-400' : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 hover:border-amber-500/50'}`}
+                    >
                         Buy Now
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- Value Proposition Section 1 - Life Questions --- */}
+      <section className="py-20 bg-slate-950 border-t border-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+            <div className="w-full md:w-1/2">
+              <div className="relative aspect-[3/4] max-w-sm mx-auto">
+                <div className="absolute inset-0 bg-amber-500/20 blur-3xl rounded-full"></div>
+                <img 
+                  src="/images/ebook-1.jpg" 
+                  alt="Let's Ask Krishna Ebook" 
+                  className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl border border-slate-800 rotate-2 hover:rotate-0 transition-transform duration-500"
+                  onError={(e) => e.currentTarget.src = "https://placehold.co/600x800/1e293b/fbbf24?text=Life+Questions"}
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <span className="text-amber-500 font-bold tracking-wider uppercase text-sm mb-2 block">For The Seekers</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-serif">Unravel Life's Toughest Questions</h2>
+              <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                Why do bad things happen to good people? What is my purpose? "Let’s Ask Krishna" brings you gentle, profound answers directly from the scriptures, simplified for your daily struggles.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {['Direct answers to modern dilemmas', 'Calming and reassuring tone', 'Practical takeaways for peace of mind'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-amber-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a 
+                href="https://rzp.io/rzp/letsaskkrishna"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors flex items-center gap-2 group w-fit"
+              >
+                Purchase Ebook <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Value Proposition Section 2 - Modern Gita (Reversed Layout) --- */}
+      <section className="py-20 bg-slate-900 border-t border-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row-reverse items-center gap-12 max-w-6xl mx-auto">
+            <div className="w-full md:w-1/2">
+              <div className="relative aspect-[3/4] max-w-sm mx-auto">
+                <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full"></div>
+                <img 
+                  src="/images/ebook-2.jpg" 
+                  alt="Gita for Today's World" 
+                  className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl border border-slate-800 -rotate-2 hover:rotate-0 transition-transform duration-500"
+                  onError={(e) => e.currentTarget.src = "https://placehold.co/600x800/1e293b/fbbf24?text=Modern+Gita"}
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <span className="text-blue-400 font-bold tracking-wider uppercase text-sm mb-2 block">For The Modern Mind</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-serif">Ancient Wisdom, Modern Context</h2>
+              <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                The Bhagavad Gita isn't just for monks. Discover how its verses apply to your career, relationships, and mental health. No complex jargon, just actionable wisdom.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {['Verse-by-verse modern breakdown', 'Real-world examples', 'Techniques for stress management'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-blue-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a 
+                href="https://rzp.io/rzp/BGQuote1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b-2 border-blue-500 pb-1 hover:text-blue-400 transition-colors flex items-center gap-2 group w-fit"
+              >
+                Purchase Ebook <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* --- Value Proposition Section 3 - Kids --- */}
+      <section className="py-20 bg-slate-950 border-t border-slate-900">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row items-center gap-12 max-w-6xl mx-auto">
+            <div className="w-full md:w-1/2">
+              <div className="relative aspect-[3/4] max-w-sm mx-auto">
+                <div className="absolute inset-0 bg-green-500/20 blur-3xl rounded-full"></div>
+                <img 
+                  src="/images/ebook-3.jpg" 
+                  alt="Gita For Kids" 
+                  className="relative z-10 w-full h-full object-cover rounded-2xl shadow-2xl border border-slate-800 rotate-2 hover:rotate-0 transition-transform duration-500"
+                  onError={(e) => e.currentTarget.src = "https://placehold.co/600x800/1e293b/fbbf24?text=For+Kids"}
+                />
+              </div>
+            </div>
+            <div className="w-full md:w-1/2">
+              <span className="text-green-500 font-bold tracking-wider uppercase text-sm mb-2 block">For The Next Generation</span>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-serif">Bedtime Stories with Values</h2>
+              <p className="text-slate-400 text-lg mb-8 leading-relaxed">
+                Plant the seeds of dharma early. Beautiful illustrations and simplified stories that teach courage, kindness, and focus to children ages 3-10.
+              </p>
+              <ul className="space-y-4 mb-8">
+                {['Engaging storytelling format', 'Vibrant full-color illustrations', 'Moral lessons for character building'].map((item, i) => (
+                  <li key={i} className="flex items-center gap-3 text-slate-300">
+                    <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <a 
+                href="https://rzp.io/rzp/BGforkids"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b-2 border-green-500 pb-1 hover:text-green-500 transition-colors flex items-center gap-2 group w-fit"
+              >
+                Purchase Ebook <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -141,10 +282,15 @@ const EbooksPage: React.FC = () => {
                         <span className="text-slate-400 text-lg line-through block">₹393</span>
                         <span className="text-5xl font-bold text-amber-500">₹197</span>
                     </div>
-                    <button className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-amber-900/50 transform hover:scale-105 transition-all flex items-center gap-2">
+                    <a 
+                      href="https://rzp.io/rzp/BGQuotecombo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-amber-900/50 transform hover:scale-105 transition-all flex items-center gap-2"
+                    >
                         <ShoppingBag className="h-5 w-5" />
                         Get Full Bundle
-                    </button>
+                    </a>
                     <p className="text-slate-500 text-xs mt-3">Instant Email Delivery</p>
                 </div>
             </div>
@@ -152,7 +298,6 @@ const EbooksPage: React.FC = () => {
       </section>
 
       {/* Reused Sections */}
-      <HowItWorks />
       <Testimonials />
     </div>
   );

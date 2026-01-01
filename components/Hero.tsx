@@ -3,6 +3,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { NavigationProps } from '../types';
 
 const Hero: React.FC<NavigationProps> = ({ onNavigate }) => {
+  // FIXED: Path should be '/images/hero.jpg', not 'public/images/hero.jpg'
   const [imgSrc, setImgSrc] = useState("/images/hero.jpg");
   const fallbackSrc = "https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1000&auto=format&fit=crop";
 
@@ -54,7 +55,8 @@ const Hero: React.FC<NavigationProps> = ({ onNavigate }) => {
                  src={imgSrc}
                  alt="Bhagavad Gita" 
                  className="w-full h-full object-cover rounded-[2rem] shadow-2xl shadow-amber-900/20 z-10 relative border border-slate-800"
-                 onError={() => {
+                 onError={(e) => {
+                     console.error("Hero image failed to load:", imgSrc);
                      if (imgSrc !== fallbackSrc) {
                          setImgSrc(fallbackSrc);
                      }

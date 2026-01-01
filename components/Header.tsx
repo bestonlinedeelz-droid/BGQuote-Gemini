@@ -35,7 +35,7 @@ const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
                   alt="BG Logo"
                   className="h-12 w-12 rounded-full border-2 border-amber-500 object-cover relative z-10"
                   onError={(e) => {
-                     // Check if we haven't already switched to fallback to prevent infinite loop
+                     console.error("Header logo failed to load:", logoSrc);
                      if (e.currentTarget.src !== fallbackLogo) {
                          e.currentTarget.src = fallbackLogo;
                      }

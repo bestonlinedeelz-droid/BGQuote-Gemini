@@ -11,7 +11,9 @@ const HomePage: React.FC<NavigationProps> = ({ onNavigate }) => {
     <>
       <Hero onNavigate={onNavigate} />
       <Stats />
+      
       <HowItWorks />
+
       <Testimonials />
       <AffiliateTeaser />
     </>
