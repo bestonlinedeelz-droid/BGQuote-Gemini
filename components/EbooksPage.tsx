@@ -15,7 +15,8 @@ const EbooksPage: React.FC = () => {
         "Section recaps for reflection"
       ],
       image: "/images/ebook-1.jpg", 
-      popular: false
+      popular: false,
+      link: "https://rzp.io/rzp/letsaskkrishna"
     },
     {
       title: "Bhagavad Gita for Today's world",
@@ -28,7 +29,8 @@ const EbooksPage: React.FC = () => {
         "Real-life applications"
       ],
       image: "/images/ebook-2.jpg",
-      popular: true
+      popular: true,
+      link: "https://rzp.io/rzp/BGQuote1"
     },
     {
       title: "Bhagavad Gita for kids",
@@ -41,7 +43,8 @@ const EbooksPage: React.FC = () => {
         "Ideal for bedtime moral lessons"
       ],
       image: "/images/ebook-3.jpg",
-      popular: false
+      popular: false,
+      link: "https://rzp.io/rzp/BGforkids"
     }
   ];
 
@@ -108,9 +111,14 @@ const EbooksPage: React.FC = () => {
                         <span className="text-3xl font-bold text-white">{book.price}</span>
                         <span className="text-slate-500 text-sm mb-1 line-through">₹299</span>
                     </div>
-                    <button className={`w-full py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${book.popular ? 'bg-amber-500 text-slate-900 hover:bg-amber-400' : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 hover:border-amber-500/50'}`}>
+                    <a 
+                      href={book.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-full py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 transition-all ${book.popular ? 'bg-amber-500 text-slate-900 hover:bg-amber-400' : 'bg-slate-800 text-white hover:bg-slate-700 border border-slate-700 hover:border-amber-500/50'}`}
+                    >
                         Buy Now
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -148,9 +156,14 @@ const EbooksPage: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <button className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors flex items-center gap-2 group">
+              <a 
+                href="https://rzp.io/rzp/letsaskkrishna"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b-2 border-amber-500 pb-1 hover:text-amber-500 transition-colors flex items-center gap-2 group w-fit"
+              >
                 Purchase Ebook <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -185,9 +198,14 @@ const EbooksPage: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <button className="text-white border-b-2 border-blue-500 pb-1 hover:text-blue-400 transition-colors flex items-center gap-2 group">
+              <a 
+                href="https://rzp.io/rzp/BGQuote1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b-2 border-blue-500 pb-1 hover:text-blue-400 transition-colors flex items-center gap-2 group w-fit"
+              >
                 Purchase Ebook <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -222,9 +240,14 @@ const EbooksPage: React.FC = () => {
                   </li>
                 ))}
               </ul>
-              <button className="text-white border-b-2 border-green-500 pb-1 hover:text-green-500 transition-colors flex items-center gap-2 group">
+              <a 
+                href="https://rzp.io/rzp/BGforkids"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white border-b-2 border-green-500 pb-1 hover:text-green-500 transition-colors flex items-center gap-2 group w-fit"
+              >
                 Purchase Ebook <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -259,10 +282,15 @@ const EbooksPage: React.FC = () => {
                         <span className="text-slate-400 text-lg line-through block">₹393</span>
                         <span className="text-5xl font-bold text-amber-500">₹197</span>
                     </div>
-                    <button className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-amber-900/50 transform hover:scale-105 transition-all flex items-center gap-2">
+                    <a 
+                      href="https://rzp.io/rzp/BGQuotecombo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold py-4 px-10 rounded-full shadow-lg shadow-amber-900/50 transform hover:scale-105 transition-all flex items-center gap-2"
+                    >
                         <ShoppingBag className="h-5 w-5" />
                         Get Full Bundle
-                    </button>
+                    </a>
                     <p className="text-slate-500 text-xs mt-3">Instant Email Delivery</p>
                 </div>
             </div>
