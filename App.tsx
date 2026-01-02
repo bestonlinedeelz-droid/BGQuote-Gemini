@@ -19,7 +19,7 @@ function App() {
       <Header onNavigate={handleNavigate} />
       <main>
         {currentPage === '/' && <HomePage onNavigate={handleNavigate} />}
-        {currentPage === '/ebooks' && <EbooksPage />}
+        {currentPage === '/ebooks' && <EbooksPage onNavigate={handleNavigate} />}
         {currentPage === '/amazon-finds' && <AmazonFindsPage />}
         {currentPage === '/flipkart-finds' && <FlipkartFindsPage />}
       </main>

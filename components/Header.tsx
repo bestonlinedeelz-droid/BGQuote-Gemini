@@ -5,7 +5,8 @@ import { NavigationProps } from '../types';
 const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [logoSrc, setLogoSrc] = useState("/images/logo.png");
-  const fallbackLogo = "https://ui-avatars.com/api/?name=BG&background=f59e0b&color=fff&rounded=true&bold=true";
+  // Use a reliable placeholder if local image fails
+  const fallbackLogo = "https://ui-avatars.com/api/?name=BG&background=f59e0b&color=fff&rounded=true&bold=true&size=128";
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
@@ -35,7 +36,6 @@ const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
                   alt="BG Logo"
                   className="h-12 w-12 rounded-full border-2 border-amber-500 object-cover relative z-10"
                   onError={(e) => {
-                     console.error("Header logo failed to load:", logoSrc);
                      if (e.currentTarget.src !== fallbackLogo) {
                          e.currentTarget.src = fallbackLogo;
                      }

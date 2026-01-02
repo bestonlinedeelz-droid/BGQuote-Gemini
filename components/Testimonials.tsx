@@ -54,13 +54,7 @@ I really loved the way it has been written... Very well explained..`,
       rating: 5,
       avatarUrl: "https://picsum.photos/seed/kritika/100/100"
     },
-    {
-      id: 7,
-      content: "The curated Flipkart lists for pooja essentials saved me so much time during Diwali.",
-      author: "Vikram Singh",
-      rating: 4,
-      avatarUrl: "https://picsum.photos/seed/vikram/100/100"
-    }
+    
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

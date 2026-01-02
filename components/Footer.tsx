@@ -4,7 +4,8 @@ import { NavigationProps } from '../types';
 
 const Footer: React.FC<NavigationProps> = ({ onNavigate }) => {
   const [logoSrc, setLogoSrc] = useState("/images/logo.png");
-  const fallbackLogo = "https://ui-avatars.com/api/?name=BG&background=f59e0b&color=fff&rounded=true&bold=true";
+  // Use a reliable placeholder if local image fails
+  const fallbackLogo = "https://ui-avatars.com/api/?name=BG&background=f59e0b&color=fff&rounded=true&bold=true&size=128";
 
   const handleNavClick = (path: string) => {
     onNavigate(path);
@@ -21,10 +22,9 @@ const Footer: React.FC<NavigationProps> = ({ onNavigate }) => {
                     src={logoSrc}
                     alt="Logo" 
                     className="w-10 h-10 rounded-full border border-amber-500" 
-                    onError={() => {
-                        console.error("Footer logo failed to load:", logoSrc);
-                        if (logoSrc !== fallbackLogo) {
-                            setLogoSrc(fallbackLogo);
+                    onError={(e) => {
+                        if (e.currentTarget.src !== fallbackLogo) {
+                            e.currentTarget.src = fallbackLogo;
                         }
                     }}
                 />

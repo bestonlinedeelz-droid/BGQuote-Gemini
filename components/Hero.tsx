@@ -3,9 +3,9 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 import { NavigationProps } from '../types';
 
 const Hero: React.FC<NavigationProps> = ({ onNavigate }) => {
-  // FIXED: Path should be '/images/hero.jpg', not 'public/images/hero.jpg'
+  // Use a reliable placeholder as fallback if local image is missing
   const [imgSrc, setImgSrc] = useState("/images/hero.jpg");
-  const fallbackSrc = "https://images.unsplash.com/photo-1605806616949-1e87b487bc2a?q=80&w=1000&auto=format&fit=crop";
+  const fallbackSrc = "https://placehold.co/1080x1080/1e293b/fbbf24?text=Timeless+Wisdom";
 
   return (
     <section className="relative bg-slate-950 pt-16 pb-24 md:pt-28 md:pb-36 overflow-hidden">

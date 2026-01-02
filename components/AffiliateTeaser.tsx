@@ -1,7 +1,8 @@
 import React from 'react';
 import { ExternalLink, Star, ShoppingCart } from 'lucide-react';
+import { NavigationProps } from '../types';
 
-const AffiliateTeaser: React.FC = () => {
+const AffiliateTeaser: React.FC<NavigationProps> = ({ onNavigate }) => {
   const products = [
     {
       title: "Bhagavad Gita As It Is",
@@ -45,9 +46,12 @@ const AffiliateTeaser: React.FC = () => {
                   Enhance your spiritual practice with our handpicked selection of books, pooja essentials, and meditation accessories.
                 </p>
             </div>
-            <a href="#" className="flex items-center gap-2 text-amber-100 border border-amber-500/30 px-6 py-3 rounded-full hover:bg-amber-500/10 transition bg-slate-800/50 backdrop-blur-sm">
+            <button 
+                onClick={() => onNavigate('/amazon-finds')}
+                className="flex items-center gap-2 text-amber-100 border border-amber-500/30 px-6 py-3 rounded-full hover:bg-amber-500/10 transition bg-slate-800/50 backdrop-blur-sm"
+            >
                 View All Recommendations <ExternalLink className="h-4 w-4" />
-            </a>
+            </button>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -77,7 +81,10 @@ const AffiliateTeaser: React.FC = () => {
                 </div>
                 <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-white">{product.price}</span>
-                    <button className="h-8 w-8 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center hover:bg-amber-500 hover:text-slate-900 transition-colors">
+                    <button 
+                        onClick={() => onNavigate(product.source === 'Amazon' ? '/amazon-finds' : '/flipkart-finds')}
+                        className="h-8 w-8 rounded-full bg-slate-800 text-amber-400 flex items-center justify-center hover:bg-amber-500 hover:text-slate-900 transition-colors"
+                    >
                         <ShoppingCart className="h-4 w-4" />
                     </button>
                 </div>
