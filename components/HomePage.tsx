@@ -4,6 +4,7 @@ import Stats from './Stats';
 import HowItWorks from './HowItWorks';
 import Testimonials from './Testimonials';
 import AffiliateTeaser from './AffiliateTeaser';
+import WhatsAppCta from './WhatsAppCta';
 import { NavigationProps } from '../types';
 import { ArrowRight } from 'lucide-react';
 
@@ -33,6 +34,7 @@ const HomePage: React.FC<NavigationProps> = ({ onNavigate }) => {
       <CtaButton />
 
       <AffiliateTeaser onNavigate={onNavigate} />
+      <WhatsAppCta />
     </>
   );
 };
