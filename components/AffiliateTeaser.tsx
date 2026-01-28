@@ -44,7 +44,7 @@ const AffiliateTeaser: React.FC<NavigationProps> = ({ onNavigate }) => {
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
-                  Curated <span className="text-amber-400">Amazon</span> Finds
+                  Curated <span className="text-amber-400">Shopping</span> Finds
                 </h2>
                 <div className="flex items-start gap-3 text-slate-400 max-w-xl text-lg">
                   <RefreshCw className="h-5 w-5 mt-1 text-amber-500 flex-shrink-0 animate-spin-slow" />
@@ -54,7 +54,7 @@ const AffiliateTeaser: React.FC<NavigationProps> = ({ onNavigate }) => {
                 </div>
             </div>
             <button 
-                onClick={() => onNavigate('/amazon-finds')}
+                onClick={() => onNavigate('/shopping')}
                 className="flex items-center gap-2 text-amber-100 border border-amber-500/30 px-6 py-3 rounded-full hover:bg-amber-500/10 transition bg-slate-800/50 backdrop-blur-sm"
             >
                 View Full Collection <ExternalLink className="h-4 w-4" />

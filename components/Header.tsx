@@ -18,8 +18,7 @@ const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "BGQuote Ebooks", href: "/ebooks" },
-    { label: "Amazon Finds", href: "/amazon-finds" },
-    { label: "Flipkart Finds", href: "/flipkart-finds" },
+    { label: "Shopping", href: "/shopping" },
   ];
 
   return (
@@ -55,10 +54,10 @@ const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
                 <button 
                   key={link.label} 
                   onClick={() => handleNavClick(link.href)}
-                  className="text-slate-300 hover:text-amber-400 font-medium transition-colors relative group py-2"
+                  className={`font-medium transition-colors relative group py-2 ${link.href === '/lets-ask-krishna' ? 'text-blue-400 hover:text-blue-300' : 'text-slate-300 hover:text-amber-400'}`}
                 >
                   {link.label}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-amber-500 transition-all duration-300 group-hover:w-full"></span>
+                  <span className={`absolute bottom-0 left-0 w-0 h-0.5 transition-all duration-300 group-hover:w-full ${link.href === '/lets-ask-krishna' ? 'bg-blue-400' : 'bg-amber-500'}`}></span>
                 </button>
               ))}
             </nav>
@@ -85,7 +84,7 @@ const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
               <button 
                 key={link.label} 
                 onClick={() => handleNavClick(link.href)}
-                className="py-3 px-4 text-slate-200 font-medium hover:text-amber-400 hover:bg-slate-800 rounded-lg transition-colors flex justify-between items-center w-full text-left"
+                className={`py-3 px-4 font-medium rounded-lg transition-colors flex justify-between items-center w-full text-left ${link.href === '/lets-ask-krishna' ? 'text-blue-300 bg-slate-800' : 'text-slate-200 hover:text-amber-400 hover:bg-slate-800'}`}
               >
                 {link.label}
               </button>

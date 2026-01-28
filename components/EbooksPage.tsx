@@ -260,20 +260,14 @@ const EbooksPage: React.FC<NavigationProps> = ({ onNavigate }) => {
                   <div className="text-center lg:text-left">
                       <h3 className="text-3xl font-bold text-white mb-6 font-serif">More Finds from BG Quote</h3>
                       <p className="text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 text-lg leading-relaxed">
-                          As a friendly suggestion, check out our curated list of other products available on Amazon and Flipkart. We've handpicked items that we think you'll really like!
+                          Check out our curated list of other products available on Amazon. We've handpicked items that we think you'll really like!
                       </p>
                       <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-6">
                           <button 
-                            onClick={() => onNavigate('/amazon-finds')}
+                            onClick={() => onNavigate('/shopping')}
                             className="px-8 py-4 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-amber-500/50 transition-all flex items-center justify-center gap-2 font-medium"
                           >
-                             Explore Amazon Finds <ArrowRight className="h-4 w-4" />
-                          </button>
-                          <button 
-                            onClick={() => onNavigate('/flipkart-finds')}
-                            className="px-8 py-4 rounded-full bg-slate-800 border border-slate-700 text-slate-200 hover:bg-slate-700 hover:text-white hover:border-blue-500/50 transition-all flex items-center justify-center gap-2 font-medium"
-                          >
-                             Explore Flipkart Finds <ArrowRight className="h-4 w-4" />
+                             Explore Shopping <ArrowRight className="h-4 w-4" />
                           </button>
                       </div>
                   </div>

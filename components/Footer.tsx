@@ -49,8 +49,7 @@ const Footer: React.FC<NavigationProps> = ({ onNavigate }) => {
             <ul className="space-y-3 text-sm text-slate-500">
               <li><button onClick={() => handleNavClick('/')} className="hover:text-amber-500 transition-colors">Home</button></li>
               <li><button onClick={() => handleNavClick('/ebooks')} className="hover:text-amber-500 transition-colors">BGQuote Ebooks</button></li>
-              <li><button onClick={() => handleNavClick('/amazon-finds')} className="hover:text-amber-500 transition-colors">Amazon Finds</button></li>
-              <li><button onClick={() => handleNavClick('/flipkart-finds')} className="hover:text-amber-500 transition-colors">Flipkart Finds</button></li>
+              <li><button onClick={() => handleNavClick('/shopping')} className="hover:text-amber-500 transition-colors">Shopping</button></li>
               <li><button onClick={() => handleNavClick('/about')} className="hover:text-amber-500 transition-colors">About Us</button></li>
             </ul>
           </div>

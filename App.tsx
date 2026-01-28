@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import EbooksPage from './components/EbooksPage';
-import AmazonFindsPage from './components/AmazonFindsPage';
-import FlipkartFindsPage from './components/FlipkartFindsPage';
+import ShoppingPage from './components/ShoppingPage';
+import LetsAskKrishnaPage from './components/LetsAskKrishnaPage';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,9 +19,9 @@ function App() {
       <Header onNavigate={handleNavigate} />
       <main>
         {currentPage === '/' && <HomePage onNavigate={handleNavigate} />}
+        {currentPage === '/lets-ask-krishna' && <LetsAskKrishnaPage onNavigate={handleNavigate} />}
         {currentPage === '/ebooks' && <EbooksPage onNavigate={handleNavigate} />}
-        {currentPage === '/amazon-finds' && <AmazonFindsPage />}
-        {currentPage === '/flipkart-finds' && <FlipkartFindsPage />}
+        {currentPage === '/shopping' && <ShoppingPage />}
       </main>
       <Footer onNavigate={handleNavigate} />
     </div>

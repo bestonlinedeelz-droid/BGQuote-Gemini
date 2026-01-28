@@ -17,7 +17,7 @@ const HowItWorks: React.FC = () => {
     },
     {
       title: "Curated Finds",
-      description: "Discover high-quality spiritual products from Amazon and Flipkart, handpicked for your journey.",
+      description: "Discover high-quality spiritual products from Amazon handpicked for your journey.",
       icon: <ShoppingBag className="h-8 w-8 text-slate-900" />,
       color: "bg-yellow-500"
     }
