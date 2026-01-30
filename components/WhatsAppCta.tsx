@@ -16,7 +16,7 @@ export const WhatsAppCard: React.FC<{className?: string}> = ({ className = "" })
                     Join "Loot Locator" Channel
                 </h3>
                 <p className="text-slate-300 max-w-lg text-sm md:text-base">
-                    Get instant alerts on price drops for spiritual books, idols, and meditation gear. <br className="hidden md:block"/>Don't miss out on the best deals from Amazon & Flipkart!
+                    Get instant alerts on massive price drops, loot deals, and hidden offers. <br className="hidden md:block"/>Don't miss out on the best savings from Amazon & Flipkart!
                 </p>
             </div>
         </div>

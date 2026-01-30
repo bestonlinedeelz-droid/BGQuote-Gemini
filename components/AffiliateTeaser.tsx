@@ -6,41 +6,42 @@ const AffiliateTeaser: React.FC<NavigationProps> = ({ onNavigate }) => {
   const products = [
     {
       title: "Notebook Journal",
-      price: "₹160",
       rating: 4.4,
       reviews: "2,673",
-      image: "/images/amz-1.jpg",
+      image: "/images/notebook-journal.jpg",
       link: "https://amzn.to/4jmm1qb"
     },
     {
       title: "Premium Key Holder",
-      price: "₹249",
       rating: 4.5,
       reviews: "565",
-      image: "/images/amz-2.jpg",
+      image: "/images/premium-key-holder.jpg",
       link: "https://amzn.to/3Lkk2pz"
     },
     {
       title: "Handicrafts Standing Krishna",
-      price: "₹481",
       rating: 4.5,
       reviews: "748",
-      image: "/images/amz-3.jpg",
+      image: "/images/handicrafts-standing-krishna.jpg",
       link: "https://amzn.to/4pjjr5u"
     },
     {
         title: "Gita Quotes Jar",
-        price: "₹249",
         rating: 3.6,
         reviews: "11",
-        image: "/images/amz-4.jpg",
+        image: "/images/gita-quotes-jar.jpg",
         link: "https://amzn.to/3KU80Dq"
       }
   ];
 
+  // Bright, eye-catching button style
+  const actionButtonStyle = "flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg shadow-amber-900/50 hover:shadow-amber-500/40 transform hover:scale-105 transition-all duration-300 border border-amber-400/30";
+
   return (
     <section className="py-20 bg-amber-950/20 border-t border-slate-800 text-white overflow-hidden relative">
       <div className="container mx-auto px-4 relative z-10">
+        
+        {/* Header Row */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
             <div>
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 font-serif">
@@ -53,15 +54,17 @@ const AffiliateTeaser: React.FC<NavigationProps> = ({ onNavigate }) => {
                   </p>
                 </div>
             </div>
+            {/* Top Button */}
             <button 
                 onClick={() => onNavigate('/shopping')}
-                className="flex items-center gap-2 text-amber-100 border border-amber-500/30 px-6 py-3 rounded-full hover:bg-amber-500/10 transition bg-slate-800/50 backdrop-blur-sm"
+                className={actionButtonStyle}
             >
-                View Full Collection <ExternalLink className="h-4 w-4" />
+                View Full Collection <ExternalLink className="h-5 w-5" />
             </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
           {products.map((product, index) => (
             <div key={index} className="group bg-slate-900 border border-slate-800 rounded-xl overflow-hidden hover:border-amber-500/50 transition-all duration-300 hover:transform hover:-translate-y-2 hover:shadow-xl hover:shadow-amber-900/10 flex flex-col">
               {/* Clickable Image Area */}
@@ -93,20 +96,29 @@ const AffiliateTeaser: React.FC<NavigationProps> = ({ onNavigate }) => {
                     <span className="font-bold">{product.rating}</span>
                     <span className="text-slate-600 ml-1">({product.reviews} reviews)</span>
                 </div>
-                <div className="flex items-center justify-between mt-auto">
-                    <span className="text-xl font-bold text-white">{product.price}</span>
+                <div className="mt-auto pt-4">
                     <a 
                         href={product.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="h-9 w-9 rounded-full bg-amber-600 text-white flex items-center justify-center hover:bg-amber-500 hover:scale-110 transition-all shadow-lg shadow-amber-900/40"
+                        className="flex items-center justify-center gap-2 w-full bg-slate-800 hover:bg-amber-600 text-amber-500 hover:text-white py-3 rounded-lg transition-all font-bold text-sm"
                     >
-                        <ShoppingCart className="h-4 w-4" />
+                        <ShoppingCart className="h-4 w-4" /> Buy Now
                     </a>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Bottom Button */}
+        <div className="flex justify-center">
+            <button 
+                onClick={() => onNavigate('/shopping')}
+                className={actionButtonStyle}
+            >
+                View Full Collection <ExternalLink className="h-5 w-5" />
+            </button>
         </div>
       </div>
     </section>
