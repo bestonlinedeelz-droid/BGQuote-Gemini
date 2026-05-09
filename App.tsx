@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import EbooksPage from './components/EbooksPage';
 import ShoppingPage from './components/ShoppingPage';
 import LetsAskKrishnaPage from './components/LetsAskKrishnaPage';
+import GiftIdeasPage from './components/GiftIdeasPage';
 import Footer from './components/Footer';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         {currentPage === '/lets-ask-krishna' && <LetsAskKrishnaPage onNavigate={handleNavigate} />}
         {currentPage === '/ebooks' && <EbooksPage onNavigate={handleNavigate} />}
         {currentPage === '/shopping' && <ShoppingPage />}
+        {currentPage === '/gift-ideas' && <GiftIdeasPage />}
       </main>
       <Footer onNavigate={handleNavigate} />
     </div>

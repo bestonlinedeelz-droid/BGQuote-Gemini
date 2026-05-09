@@ -19,6 +19,7 @@ const Header: React.FC<NavigationProps> = ({ onNavigate }) => {
     { label: "Home", href: "/" },
     { label: "BGQuote Ebooks", href: "/ebooks" },
     { label: "Shopping", href: "/shopping" },
+    { label: "Gift Ideas", href: "/gift-ideas" },
   ];
 
   return (

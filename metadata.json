@@ -1,5 +1,6 @@
 {
   "name": "Bhagavad Gita Quotes",
   "description": "Discover timeless wisdom, ebooks, and curated spiritual finds inspired by the Bhagavad Gita.",
-  "requestFramePermissions": []
+  "requestFramePermissions": [],
+  "majorCapabilities": []
 }
