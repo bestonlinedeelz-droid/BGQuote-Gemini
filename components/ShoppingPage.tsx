@@ -111,7 +111,7 @@ const ShoppingPage: React.FC = () => {
       description: "Traditional wooden Rehal for reading holy books comfortably. Foldable design with intricate carving.",
       rating: 4.3,
       reviews: 1200,
-      image: "/images/wooden-book-stand.jpg",
+      image: "/images/wooden-book-stand-rehal.jpg",
       link: "https://amzn.to/4a0bdtz",
       boughtStats: "1k+ bought past month"
     },
